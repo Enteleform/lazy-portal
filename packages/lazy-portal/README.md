@@ -23,6 +23,16 @@ Try it out here:
 # Installation
 <!--########################################################################-->
 
+
+&nbsp;  
+## With an Astro integration:
+
+Use [`astro-portal`](https://github.com/Enteleform/lazy-portal/tree/main/packages/astro-portal#installation).
+
+
+&nbsp;  
+## With a bundler:
+
 ### NPM
 
 ```bash
@@ -38,7 +48,24 @@ npm install lazy-portal
 </head>
 ```
 
-* update the `lazy-portal` paths appropriately based on how they need to be resolved for your particular build configuration.
+- update the `lazy-portal` paths appropriately based on how they need to be resolved for your particular build configuration.
+
+
+&nbsp;  
+## Without a bundler:
+
+### index.html
+
+```html
+<head>
+  <!-- ESM Version: -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/lazy-portal/dist/ESM/Client/Initialize.js"/>
+  <!-- CJS Version: -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/lazy-portal/dist/CJS/Client/Initialize.js"/>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lazy-portal/dist/Assets/Style.css"/>
+</head>
+```
 
 
 
