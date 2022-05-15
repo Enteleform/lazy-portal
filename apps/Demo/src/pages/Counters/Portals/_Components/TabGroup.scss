@@ -1,0 +1,298 @@
+/* [ISSUE.10] move relevant CSS to `Public/Styles/Counter.css` */
+
+
+//####################################################################################################################//
+//##>  Container                                                                                                    ##//
+//####################################################################################################################//
+
+	.TAB-CONTAINER{
+		--Hue:               224;
+		--Saturation:        35%;
+		--Lightness:         55%;
+		--OutlineLightness:  0%;
+		--BackdropScale:     1;
+
+		display:          flex;
+		flex-direction:   column;
+		align-items:      center;
+		justify-content:  center;
+		gap:              3rem;
+
+		--Hue-Astro:    40;   --Saturation-Astro:    80%;   --Lightness-Astro:    110%;  --OutlineLightness-Astro:    98%;
+		--Hue-Lit:      231;  --Saturation-Lit:      100%;  --Lightness-Lit:      100%;
+		--Hue-Markdown: 280;  --Saturation-Markdown: 90%;   --Lightness-Markdown: 100%;  --OutlineLightness-Markdown: 70%;
+		--Hue-Preact:   260;  --Saturation-Preact:   100%;  --Lightness-Preact:   120%;
+		--Hue-React:    192;  --Saturation-React:    90%;   --Lightness-React:    100%;
+		--Hue-Solid:    212;  --Saturation-Solid:    120%;  --Lightness-Solid:    110%;
+		--Hue-Svelte:   15;   --Saturation-Svelte:   100%;  --Lightness-Svelte:   100%;
+		--Hue-Vue:      153;  --Saturation-Vue:      90%;   --Lightness-Vue:      90%;
+
+		&.ActiveTab-Astro,    &.NextTab-Astro,    &.ActiveTab-Astro    .TAB-PANELS{--Hue:var(--Hue-Astro   );  --Saturation:var(--Saturation-Astro   );  --Lightness:var(--Lightness-Astro   );  --OutlineLightness:var(--OutlineLightness-Astro   );}
+		&.ActiveTab-Lit,      &.NextTab-Lit,      &.ActiveTab-Lit      .TAB-PANELS{--Hue:var(--Hue-Lit     );  --Saturation:var(--Saturation-Lit     );  --Lightness:var(--Lightness-Lit     );                                                      }
+		&.ActiveTab-Markdown, &.NextTab-Markdown, &.ActiveTab-Markdown .TAB-PANELS{--Hue:var(--Hue-Markdown);  --Saturation:var(--Saturation-Markdown);  --Lightness:var(--Lightness-Markdown);  --OutlineLightness:var(--OutlineLightness-Markdown);}
+		&.ActiveTab-Preact,   &.NextTab-Preact,   &.ActiveTab-Preact   .TAB-PANELS{--Hue:var(--Hue-Preact  );  --Saturation:var(--Saturation-Preact  );  --Lightness:var(--Lightness-Preact  );                                                      }
+		&.ActiveTab-React,    &.NextTab-React,    &.ActiveTab-React    .TAB-PANELS{--Hue:var(--Hue-React   );  --Saturation:var(--Saturation-React   );  --Lightness:var(--Lightness-React   );                                                      }
+		&.ActiveTab-Solid,    &.NextTab-Solid,    &.ActiveTab-Solid    .TAB-PANELS{--Hue:var(--Hue-Solid   );  --Saturation:var(--Saturation-Solid   );  --Lightness:var(--Lightness-Solid   );                                                      }
+		&.ActiveTab-Svelte,   &.NextTab-Svelte,   &.ActiveTab-Svelte   .TAB-PANELS{--Hue:var(--Hue-Svelte  );  --Saturation:var(--Saturation-Svelte  );  --Lightness:var(--Lightness-Svelte  );                                                      }
+		&.ActiveTab-Vue,      &.NextTab-Vue,      &.ActiveTab-Vue      .TAB-PANELS{--Hue:var(--Hue-Vue     );  --Saturation:var(--Saturation-Vue     );  --Lightness:var(--Lightness-Vue     );                                                      }
+
+		&.PreviousTab-Astro    .TAB-PANELS{--Hue:var(--Hue-Astro   );  --Saturation:var(--Saturation-Astro   );  --Lightness:var(--Lightness-Astro   );  --OutlineLightness:var(--OutlineLightness-Astro   );}
+		&.PreviousTab-Lit      .TAB-PANELS{--Hue:var(--Hue-Lit     );  --Saturation:var(--Saturation-Lit     );  --Lightness:var(--Lightness-Lit     );                                                      }
+		&.PreviousTab-Markdown .TAB-PANELS{--Hue:var(--Hue-Markdown);  --Saturation:var(--Saturation-Markdown);  --Lightness:var(--Lightness-Markdown);  --OutlineLightness:var(--OutlineLightness-Markdown);}
+		&.PreviousTab-Preact   .TAB-PANELS{--Hue:var(--Hue-Preact  );  --Saturation:var(--Saturation-Preact  );  --Lightness:var(--Lightness-Preact  );                                                      }
+		&.PreviousTab-React    .TAB-PANELS{--Hue:var(--Hue-React   );  --Saturation:var(--Saturation-React   );  --Lightness:var(--Lightness-React   );                                                      }
+		&.PreviousTab-Solid    .TAB-PANELS{--Hue:var(--Hue-Solid   );  --Saturation:var(--Saturation-Solid   );  --Lightness:var(--Lightness-Solid   );                                                      }
+		&.PreviousTab-Svelte   .TAB-PANELS{--Hue:var(--Hue-Svelte  );  --Saturation:var(--Saturation-Svelte  );  --Lightness:var(--Lightness-Svelte  );                                                      }
+		&.PreviousTab-Vue      .TAB-PANELS{--Hue:var(--Hue-Vue     );  --Saturation:var(--Saturation-Vue     );  --Lightness:var(--Lightness-Vue     );                                                      }
+	}
+
+
+//####################################################################################################################//
+//##>  Buttons                                                                                                      ##//
+//####################################################################################################################//
+
+	.TAB-BUTTONS,
+	.TAB-BUTTONS > .Row{
+		display:  flex;
+		gap:      0.8rem;
+	}
+
+	.TAB-BUTTONS       {flex-direction:column;}
+	.TAB-BUTTONS > .Row{flex-direction:row;   }
+
+
+	.Counter button,
+	.TAB-BUTTON{
+		--Transition:       1000ms;
+		--ScaleTransition:  0ms;
+
+		//             H            S                                L
+		--Hue_1:   hsl(var(--Hue),  calc(0.14 * var(--Saturation)),  02%);
+		--Hue_2:   hsl(var(--Hue),  calc(0.14 * var(--Saturation)),  14%);
+		--Hue_3:   hsl(var(--Hue),  calc(0.12 * var(--Saturation)),  25%);
+		--Hue_4:   hsl(var(--Hue),  calc(0.10 * var(--Saturation)),  36%);
+		--Hue_5:   hsl(var(--Hue),  calc(0.09 * var(--Saturation)),  47%);
+		--Hue_6:   hsl(var(--Hue),  calc(0.10 * var(--Saturation)),  58%);
+		--Hue_7:   hsl(var(--Hue),  calc(0.11 * var(--Saturation)),  68%);
+		--Hue_8:   hsl(var(--Hue),  calc(0.14 * var(--Saturation)),  78%);
+		--Hue_9:   hsl(var(--Hue),  calc(0.16 * var(--Saturation)),  88%);
+		--Hue_10:  hsl(var(--Hue),  calc(0.16 * var(--Saturation)),  98%);
+
+		width:          6.25rem;
+		padding:        0.4rem 0.5rem 0.5rem 0.5rem;
+		background:     var(--Grey_2);
+		color:          var(--Grey_6);
+		border:         2.25px solid var(--Grey_3);
+		border-radius:  3px;
+		font-size:      0.925rem;
+		font-weight:    500;
+		cursor:         pointer;
+
+		transition:
+			all           var(--Transition     ),
+			color         var(--Transition     ),
+			border-color  var(--Transition     ),
+			scale         var(--ScaleTransition),
+			filter        calc(var(--Transition) * 0.75)
+		;
+
+		filter:
+			saturate  (1)
+			brightness(1)
+			contrast  (1)
+			drop-shadow(1px 1px 1px black)
+			drop-shadow(2px 2px 3px black)
+			drop-shadow(2px 2px 3px black)
+		;
+
+		&.Active{
+			--Transition:  300ms;
+			--Brightness:  1.3;
+
+			filter:
+				saturate(4)
+				brightness(var(--Brightness))
+				contrast(1.15)
+				drop-shadow(1px 1px 1px black)
+				drop-shadow(2px 2px 3px black)
+				drop-shadow(2px 2px 3px black)
+			;
+		}
+
+		&:hover, &:focus-visible{background:var(--Grey_3);  color:var(--Grey_7);  border-color:var(--Grey_4);}
+		&.Active                {background:var(--Hue_3 );  color:var(--Hue_7 );  border-color:var(--Hue_4 );}
+		&:active                {background:var(--Grey_4);  color:var(--Grey_8);  border-color:var(--Grey_5);}
+		&.Active:active         {background:var(--Hue_4 );  color:var(--Hue_8 );  border-color:var(--Hue_5 );}
+
+		&:hover,        &:focus-visible{--Transition:500ms;}
+		&.Active:hover, &:focus-visible{--Brightness:1.6;  }
+	}
+
+
+	.Counter button{
+		--ScaleTransition:  300ms;
+
+		background:    var(--Grey_3);
+		color:         var(--Grey_7);
+		border-color:  var(--Grey_4);
+
+		filter:
+			brightness(1)
+			drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 80%))
+			drop-shadow(1px 2px 3px hsla(0, 0%, 0%, 80%))
+			drop-shadow(1px 2px 3px hsla(0, 0%, 0%, 80%))
+		;
+
+		box-shadow://         H            S                               L                              A
+			inset 0 0 8px  hsla(0,           0%,                             0%,                            45%),
+			inset 0 0 16px hsla(var(--Hue),  calc(0.8 * var(--Saturation)),  calc(0.5 * var(--Lightness)),  10%)
+		;
+
+		&:hover,
+		&:focus-visible{
+			scale:  1.028;
+
+			filter:
+				brightness(1.1)
+				drop-shadow(2px 2px 2px hsla(0, 0%, 0%, 80%))
+				drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 80%))
+				drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 80%))
+			;
+		}
+
+		&:active{
+			--ScaleTransition:  100ms;
+
+			scale:         0.98;
+			background:    var(--Grey_4);
+			color:         var(--Grey_8);
+			border-color:  var(--Grey_5);
+
+			filter:
+				brightness(1.1)
+				drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 100%))
+				drop-shadow(1px 1px 2px hsla(0, 0%, 0%, 100%))
+				drop-shadow(1px 1px 2px hsla(0, 0%, 0%, 100%))
+			;
+		}
+	}
+
+
+	.Counter .Count{
+		opacity:                  0.8;
+		background-clip:          text !important;
+		-webkit-text-fill-color:  transparent;
+
+		background: radial-gradient(
+			/*  H            S                               L                          */
+			hsl(var(--Hue),  calc(0.7 * var(--Saturation)),  calc(0.6 * var(--Lightness))),
+			hsl(var(--Hue),  calc(0.3 * var(--Saturation)),  calc(0.3 * var(--Lightness)))
+		);
+	}
+
+
+//####################################################################################################################//
+//##>  Panels                                                                                                       ##//
+//####################################################################################################################//
+
+	.TAB-PANELS{
+		--InnerShadow:/*       H            S                               L                              A */
+			inset 0 0 50px  hsla(0,           0%,                             0%,                            45%),
+			inset 0 0 300px hsla(var(--Hue),  calc(0.8 * var(--Saturation)),  calc(0.5 * var(--Lightness)),  8% )
+		;
+
+		//                H            S                                L                               A
+		--Shadow_1:  hsla(var(--Hue),  calc(1.00 * var(--Saturation)),  calc(0.75 * var(--Lightness)),  100%);
+		--Shadow_2:  hsla(var(--Hue),  calc(0.33 * var(--Saturation)),  calc(0.35 * var(--Lightness)),  100%);
+		--Shadow_3:  hsla(var(--Hue),  calc(0.38 * var(--Saturation)),  calc(0.45 * var(--Lightness)),  100%);
+
+		aspect-ratio:   5 / 7;
+		width:          calc(100% - (1.2rem * 2));
+		padding:        1.4rem 1.2rem;
+		background:     var(--Grey_3);
+		border:         2px solid var(--Grey_4);
+		border-radius:  3px;
+		box-shadow:     var(--InnerShadow);
+		transition:     all 600ms;
+
+		filter:
+			drop-shadow(0px 0px 1px  var(--Shadow_1))
+			drop-shadow(2px 2px 4px  var(--Shadow_2))
+			drop-shadow(6px 6px 10px var(--Shadow_3))
+			drop-shadow(6px 6px 16px black          )
+			drop-shadow(6px 6px 16px black          )
+		;
+
+	}
+
+
+	.TAB-PANELS > .Background{
+		display:        flex;
+		height:         100%;
+		background:     var(--Grey_2);
+		border:         1px solid var(--Grey_1);
+		border-radius:  3px;
+		box-shadow:     var(--InnerShadow);
+	}
+
+
+	.TAB-PANEL{
+		align-items:      center;
+		justify-content:  center;
+
+		& .Logo, & .Controls{opacity:   0;        }
+		& .Logo             {transition:all 400ms;}
+		& .Controls         {transition:all 800ms;}
+
+		&.Transition-In-Start :is(.Logo, .Controls){opacity:0;     transition:     all 0ms;}
+		&.Transition-In-Start .Logo                {scale:  0.6;   --BackdropScale:0.8;    }
+		&.Transition-In-Start .Controls button     {scale:  0.96;                          }
+
+		&.Transition-In-End .Logo    {opacity:0.8;  transition:all 400ms;                                          }
+		&.Transition-In-End .Controls{opacity:1;    transition:all 800ms /* easeIn */ cubic-bezier(0.3, 0, 0.6, 1);}
+
+		&.Transition-Out-Start :is(.Logo, .Controls){transition:all 0ms;}
+		&.Transition-Out-Start .Logo                {opacity:   0.8;    }
+		&.Transition-Out-Start .Controls            {opacity:   1;      }
+
+		&.Transition-Out-End .Logo           {opacity:0.3;  scale:0.6;   transition:all 400ms;                                       }
+		&.Transition-Out-End .Controls       {opacity:0;                 transition:all 800ms /* easeOut */ cubic-bezier(0, 0, 0, 1);}
+		&.Transition-Out-End .Controls button{              scale:0.96;                                                              }
+
+		&.Transition-Complete .Logo    {opacity:0.8;}
+		&.Transition-Complete .Controls{opacity:1;  }
+
+
+		//###  Astro  ###//
+		&.ID_Astro.Transition-In-Start .Logo                 {scale:  0;  transform:translateY(400px);                                                                                                              }
+		&.ID_Astro.Transition-In       .Logo path.Title      {opacity:0;                                                                                                                                            }
+		.Counter.Astro >               .Logo .ICON path.Title{fill:   hsl(var(--Hue), 16%, 80%);                                                                                                                    }
+		&.ID_Astro.Transition-In-End   .Logo                 {transition:/*[1]*/ scale 450ms /* easeIn */ cubic-bezier(0.3, 0, 0.6, 1.35),  /*[2]*/ transform 450ms /* easeIn */ cubic-bezier(0.4, -0.1, 0.6, 1.15);}
+		&.ID_Astro                     .Logo path.Title      {transition:/*[1]*/ all   500ms;                                                                                                                       }
+
+		//###  Lit  ###//
+		&.ID_Lit.Transition-In-Start .Logo{scale:0;  transform:scaleX(-3) rotate(40deg);                 }
+		&.ID_Lit.Transition-In-End   .Logo{transition:all 400ms /* easeOut */ cubic-bezier(0, 0, 0, 1.2);}
+
+		//###  Markdown  ###//
+		&.ID_Markdown.Transition-In-Start .Logo{scale:1;  transform:translateY(-40px);                               }
+		&.ID_Markdown.Transition-In-End   .Logo{transition:all 450ms /* easeInOutBack */ cubic-bezier(0, -1, 0, 3.5);}
+
+		//###  Preact  ###//
+		&.ID_Preact.Transition-In-Start .Logo{transform:scaleX(-1) rotate(-450deg);}
+		&.ID_Preact.Transition-In-End   .Logo{transition:all 450ms;                }
+
+		//###  React  ###//
+		&.ID_React.Transition-In-Start  .Logo{scale:0.4;  transform:rotate(180deg);}
+
+		//###  Solid  ###//
+		&.ID_Solid.Transition-In-Start .Logo{--BackdropScale:0.1;  transform:rotate(-50deg);  scale:1.8;            }
+		&.ID_Solid.Transition-In-End   .Logo{transition:all 450ms /* easeInOutBack */ cubic-bezier(0, -3.1, 0, 1.7);}
+
+		//###  Svelte  ###//
+		&.ID_Svelte.Transition-In-Start .Logo{transform:scaleY(-1.35);}
+
+		//###  Vue  ###//
+		&.ID_Vue.Transition-In-Start .Logo{scale:1.2;  transform:scaleX(-0.25);                                       }
+		&.ID_Vue.Transition-In-End   .Logo{transition:all 450ms /* easeInOutQuart */ cubic-bezier(0.445, 0, 0.175, 1);}
+	}

@@ -1,0 +1,102 @@
+
+html,
+body{
+	width:  100%;
+	height: 100%;
+	margin: 0;
+}
+
+body{
+	background: #111;
+	filter:
+		sepia(1)
+		hue-rotate(185deg)
+		brightness(0.88)
+		saturate(0.47)
+	;
+}
+
+*{
+	color:       #777;
+	font-family: monospace;
+	user-select: none;
+}
+
+main{
+	width:           100%;
+	height:          100%;
+	display:         flex;
+	flex-direction:  column;
+	justify-content: center;
+	align-items:     center;
+}
+
+main > *{
+	padding: 1.5rem;
+}
+
+.Data > *,
+.Files{
+	white-space: pre;
+}
+
+.Data > h3{
+	margin-bottom: 0.3rem;
+}
+.Data > h3:not(:first-of-type){
+	margin-top: 0;
+}
+
+.Files{
+	margin-top: 2rem;
+	font-size:  1.4rem;
+}
+
+.Component{
+	margin-top: 4rem;
+}
+
+.ComponentSandbox{
+	display:         flex;
+	flex-direction:  column;
+	justify-content: center;
+}
+
+.ComponentSandbox > .Buttons{
+	display:         flex;
+	flex-direction:  row;
+	justify-content: center;
+	gap:             1.5rem;
+	margin-bottom:   1.5rem;
+}
+
+.ComponentSandbox button{
+	width: 5rem;
+}
+
+iframe{
+	border: 1px solid #555;
+	border-radius: 2px;
+}
+
+button{
+	display:         flex;
+	justify-content: center;
+	align-items:     center;
+	background:      #666;
+	border:          2px solid #888;
+	border-radius:   2px;
+	color:           #DDD;
+	padding:         0.5rem;
+	cursor:          pointer;
+	filter:          brightness(0.925);
+}
+button:hover{
+	filter: brightness(1.2);
+}
+button:active{
+	filter: brightness(1.4);
+}
+button:focus{
+	outline: none;
+}

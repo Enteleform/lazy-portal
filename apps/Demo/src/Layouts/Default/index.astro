@@ -1,0 +1,62 @@
+---
+
+  //###  App.URLs  ###//
+	import Initialize_URL from "~/Initialize/index.ts?url"
+
+	//###  Style  ###//
+	import "./Styles/Main.scss"
+	import "./Styles/Scrollbar.scss"
+
+	//###  Components  ###//
+	import Nav from "./Components/Nav.astro"
+
+
+	export type Props = {
+		children: Element
+		id:       string
+	}
+
+	const {id} = (Astro.props as Props)
+
+---
+
+
+
+<head>
+
+	<title> {`Frameworks/${id}`} </title>
+
+	<!--###  Document  ###-->
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+	<meta name="theme-color" content="black"/>
+
+  <!--###  Scripts.App  ###-->
+	<script type="module" src={Initialize_URL}/>
+
+	<!--###  Fonts  ###-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Noto+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body class={`PAGE_${id} TransitionsDisabled OverflowDisabled`}>
+
+	<Nav />
+	<slot/>
+
+	<script type="module">
+		const {body} = document
+
+		/* prevents transitions from unstyled > styled */
+		setTimeout(()=>{body.classList.remove("TransitionsDisabled")}, 300)
+
+		/* prevents overflow while component libraries are loading */
+		setTimeout(()=>{body.classList.remove("OverflowDisabled")}, 3000)
+	</script>
+
+</body>

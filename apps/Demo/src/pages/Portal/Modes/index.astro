@@ -1,0 +1,22 @@
+---
+
+	//###  Style  ###//
+	import "./index.scss"
+
+	//###  Layout  ###//
+	import Layout from "Layouts/Default/index.astro"
+
+	//###  Components  ###//
+	import {Modes} from "./_Components/Modes"
+
+---
+
+
+
+<Layout id="Portal_Modes">
+	<main>
+
+		<Modes client:only="solid-js"/>
+
+	</main>
+</Layout>

@@ -1,0 +1,148 @@
+
+//####################################################################################################################//
+//##>  Common                                                                                                       ##//
+//####################################################################################################################//
+
+	.TAB-CONTAINER,
+	.TAB-PANELS,
+	.TAB-PANEL,
+	portal-destination,
+	.s-tabs,            /* Svelte.Materialify */
+	.n-config-provider{ /* Vue   .NaiveUI     */
+		width:   100%;
+		height:  100%;
+	}
+
+	.TAB-CONTAINER *{
+		text-transform:  unset !important;
+	}
+
+	.TAB-PANEL{
+		align-items:      center !important;
+		justify-content:  center !important;
+		padding:          0      !important;
+
+		&:not([hidden]){
+			display:  flex;
+		}
+	}
+
+	portal-destination[name="React-ThreeFiber"],
+	portal-destination[name="Solid-Lume"      ]{
+		overflow:    hidden;
+		background:  var(--Grey_2);
+		opacity:     0.8;
+	}
+
+
+//####################################################################################################################//
+//##>  Markdown.Outer                                                                                               ##//
+//####################################################################################################################//
+
+	body.PAGE_KitchenSink_Markdown{
+		overflow:  visible !important;
+
+		section.Mixed-FramerMotion{min-height:36rem;}
+		section.React-ThreeFiber  {min-height:50rem;}
+		section.Solid-Lume        {min-height:60rem;}
+		section.Nested-Frameworks {min-height:55rem;}
+
+		section.Astro-Markdown{
+			display:          flex;
+			justify-content:  center;
+		}
+
+		h1{
+			margin:      4rem 0 1rem 0;
+			text-align:  center;
+		}
+	}
+
+
+//####################################################################################################################//
+//##>  Markdown.Inner                                                                                               ##//
+//####################################################################################################################//
+
+	portal-destination[name="Astro-Markdown"]{
+		--BorderRadius:  2px;
+
+		width:          fit-content;
+		height:         fit-content;
+		padding:        2rem;
+		background:     var(--Grey_2);
+		color:          var(--Grey_6);
+		border:         1px solid var(--Grey_3);
+		border-radius:  var(--BorderRadius);
+
+		> portal-transport > *           {margin: 0 0 1rem 0;}
+		> portal-transport > *:last-child{margin: 0 0 0    0;}
+
+		h2                    {margin-bottom:0.4rem;}
+		h2:first-of-type      {margin-top:   0rem;  }
+		h2:not(:first-of-type){margin-top:   1rem;  }
+
+		pre.astro-code{
+			padding:        1.2rem;
+			border:         1px solid var(--Grey_1);
+			border-radius:  var(--BorderRadius);
+		}
+		pre.astro-code *{
+			font-family:  var(--Font_Monospace);
+			user-select:  text !important;
+		}
+		pre.astro-code > code{
+			padding:           unset;
+			background-color:  unset;
+			font-weight:       unset;
+		}
+	}
+
+
+
+//####################################################################################################################//
+//##>  Svelte.Materialify                                                                                           ##//
+//####################################################################################################################//
+
+	.s-app{
+		background:  unset !important;
+
+		.s-window{
+			height:  95% !important;
+		}
+
+		.s-tab-content{
+			display:  contents !important;
+		}
+
+		.s-window-item{
+			height:           100% !important;
+			justify-content:  center;
+			align-items:      center;
+
+			&:is(.active, .next, .prev){
+				display:  flex;
+			}
+		}
+
+		.s-slide-group__content{
+			max-width:  fit-content;
+			margin:     0 auto;
+		}
+
+		.s-tab{
+			text-transform:  none;
+		}
+	}
+
+
+//####################################################################################################################//
+//##>  Vue.NaiveUI                                                                                                  ##//
+//####################################################################################################################//
+
+	.n-tabs.TAB-CONTAINER{
+
+		.n-tabs-wrapper{ /* .TAB-BUTTONS */
+			gap:  2rem;
+		}
+
+	}

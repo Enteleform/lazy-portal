@@ -1,0 +1,56 @@
+{"$schema":"https://json.schemastore.org/tsconfig.json",
+
+	"compilerOptions": {
+		"baseUrl": "./",
+		"rootDir": "./",
+
+    "target": "ES2020",
+    "module": "ESNext",
+
+		"lib": [
+			"ESNext",
+			"DOM.Iterable",
+			"DOM",
+			"ScriptHost"
+		],
+
+		"paths": {
+			"~/*":          ["./src/*"           ],
+			"Layouts/*":    ["./src/Layouts/*"   ],
+			"Pages/*":      ["./src/pages/*"     ],
+			"Public/*":     ["./public/*"        ],
+			"Utilities/*":  ["./src/Utilities/*" ]
+		},
+
+		"moduleResolution": "Node",
+
+		"declaration":            false,
+		"emitDecoratorMetadata":  true,
+		"esModuleInterop":        true,
+		"experimentalDecorators": true,
+		"importHelpers":          true,
+		"skipDefaultLibCheck":    true,
+		"skipLibCheck":           true,
+		"sourceMap":              true
+	},
+
+	"include": [
+		"**/*.d.ts",
+		"./src/**/*.astro",
+		"./src/**/*.cjs",
+		"./src/**/*.js",
+		"./src/**/*.jsx",
+		"./src/**/*.md",
+		"./src/**/*.mdx",
+		"./src/**/*.mjs",
+		"./src/**/*.svelte",
+		"./src/**/*.ts",
+		"./src/**/*.tsx",
+		"./src/**/*.vue"
+	],
+
+	"exclude": [
+		"node_modules"
+	]
+
+}

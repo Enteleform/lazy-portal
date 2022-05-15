@@ -1,0 +1,173 @@
+
+<!--####################################################################################################################-->
+<!--##>  Legend                                                                                                       ##-->
+<!--####################################################################################################################-->
+
+  - Tiers:
+    - `HIGH`:    Errors, Broken Functionality
+    - `MEDIUM`:  Errors w/ Workarounds, Warnings, Noticeable UI/UX/DX Effects
+    - `LOW`:     Minor Inconveniences
+    - `???`:     Questions, Investigation Required
+    - `resolved`
+
+  - Format
+    - [#][Tier][Internal|External][Source][ ] Description
+    - [#][Tier][Internal|External][Source][*] Description <!-- has notes-->
+
+
+<!--####################################################################################################################-->
+<!--##>  Inbox                                                                                                        ##-->
+<!--####################################################################################################################-->
+
+  - https://docs.astro.build/en/migrate/#file-extensions-in-imports
+    - breaks intellisense
+    - might be fixed w/ updated VSCode Extension
+
+  - svelte components run `onDestroy` on server without having previously run `onMount`
+    - might be fixed w/ updated `astro`
+
+  - @ Preact:
+    -
+      ```
+      Warning: Invalid hook call. Hooks can only be called inside of the body of a function
+      component. This could happen for one of the following reasons:
+      1. You might have mismatching versions of React and the renderer (such as React DOM)
+      2. You might be breaking the Rules of Hooks
+      3. You might have more than one copy of React in the same app
+      See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem
+      ```
+    - maybe related to server/client discrepancies. see: [Issue.28]
+
+
+<!--####################################################################################################################-->
+<!--##>  Active                                                                                                       ##-->
+<!--####################################################################################################################-->
+
+  - [1 ][HIGH    ][External][Astro.Lit                           ][ ] SASS:                                                                                                                        https://github.com/withastro/astro/issues/2623
+  - [2 ][HIGH    ][External][Astro.Preact                        ][ ] renders `<astro-root>() => v</astro-root>` instead of actual page content
+  - [3 ][MEDIUM  ][External][Astro.React                         ][ ] `Text content did not match`:                                                                                                https://github.com/withastro/astro/issues/2180
+  - [4 ][resolved]
+  - [5 ][resolved]
+  - [6 ][resolved]
+  - [7 ][???     ][External][Astro                               ][ ] need to figure out how to lazy-load scripts @ [Astro, Markdown] `Portal.Entrance`s
+  - [8 ][???     ][External][Astro                               ][ ] id generation is not reliable between client & server
+  - [9 ][resolved]
+  - [10][MEDIUM  ][External][Astro                               ][ ] No HMR @ CSS:                                                                                                                https://github.com/withastro/astro/issues/2551
+  - [11][MEDIUM  ][External][VSCode.Astro                        ][ ] lots of type errors, currently avoiding them via `"astro.plugin.typescript.diagnostics.enable": false`
+  - [12][resolved]
+  - [13][MEDIUM  ][External][Astro                               ][*] obscure error message when import fails.
+  - [14][HIGH    ][External][Astro                               ][ ] `client:only` throws error:                                                                                                  https://github.com/withastro/astro/issues/2662
+  - [15][MEDIUM  ][External][Astro                               ][*] dev server load is inconsistent, throws errors intermittently & eventually works after several refreshes
+  - [16][resolved]
+  - [17][MEDIUM  ][External][Lume                                ][ ] element is no longer visible after being transferred between parent nodes
+  - [18][MEDIUM  ][External][Astro || MUI                        ][*] Console.Error:   `Uncaught (in promise) Error: Unable to find the root for the component React_MUI at onVisible`
+  - [19][MEDIUM  ][External][Astro || Vue                        ][*] Console.Warning: `[Vue warn]: Attempting to hydrate existing markup but container is empty. Performing full mount instead.`
+  - [20][MEDIUM  ][External][Astro || SvelteMaterialify          ][*] Console.Error:   `<Svelte_Materialify> received an unexpected slot "default".`                                               https://github.com/sveltejs/svelte/issues/6325
+  - [22][resolved]
+  - [23][HIGH    ][External][XElement                            ][*] build error: `'createRequire' is not exported by __vite-browser-external`
+  - [24][MEDIUM  ][???     ][Astro                               ][ ] need to figure out how to prevent module duplication between Astro & non-Astro files
+  - [25][resolved]
+  - [26][resolved]
+  - [27][resolved]
+  - [28][resolved]
+  - [29][MEDIUM  ][External][Astro.Svelte                        ][*] nested Svelte components are unmounted unexpectedly when using `client:visible`
+  - [30][MEDIUM  ][External][SolidPrimitives/IntersectionObserver][ ] `display:contents` doesn't work with observer:                                                                               https://github.com/solidjs-community/solid-primitives/issues/116
+  - [31][MEDIUM  ][External][Astro.Solid                         ][ ] newline character causes error                                                                                               https://github.com/withastro/astro/issues/3371
+
+
+<!--####################################################################################################################-->
+<!--##>  Notes                                                                                                        ##-->
+<!--####################################################################################################################-->
+
+  - [13]
+  - e.g. when an import fails @ React, the Svelte renderer is mentioned in the error.
+    - might be related to nested renderers ?
+    - ```log
+      Cannot read properties of undefined (reading 'render')
+      TypeError: Cannot read properties of undefined (reading 'render')
+        at Object.check (@astrojs/renderer-svelte/server.js:4:18)
+        at Module.renderComponent (../../../src/runtime/server/index.ts:172:25)
+        at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      ```
+
+  - [15]
+    - https://i.imgur.com/0n18p2K.png
+
+  - [18]
+    - maybe related to server/client discrepancies. see: [Issue.28]
+
+  - [19]
+    - maybe related to server/client discrepancies. see: [Issue.28]
+
+  - [20]
+    - maybe related to server/client discrepancies. see: [Issue.28]
+
+  - [23]
+    - ```log
+      'createRequire' is not exported by __vite-browser-external, imported by /node_modules/astro-xelement/XElement.astro
+      file: /node_modules/astro-xelement/XElement.astro:15:9
+      13: } from "astro/internal";
+      14: import { Fragment } from "astro/internal";
+      15: import { createRequire } from "node:module";
+                   ^
+      16: import * as $$module1 from "astro/internal";
+      17: import * as $$module2 from "node:module";
+      ```
+
+  - [29]
+    - [Notes]
+      - maybe related to server/client discrepancies. see: [Issue.28]
+    - [Workaround]
+      - use `client:only` instead of `client:visible`
+
+
+<!--####################################################################################################################-->
+<!--##>  Resolved                                                                                                     ##-->
+<!--####################################################################################################################-->
+
+  - [4][HIGH][External][Astro.Solid] `TypeError: Cannot read properties of null (reading 'nextSibling')`
+    - [Fix] update to latest `astro` dependencies as of 2022-05-03
+
+  - [5][MEDIUM][Internal][Astro.Markdown] unstyled > styled flash @ initial load
+    - [Fix] prevent `Portal` transfer of `<link>` & `<script>` tags
+    - [Notes]
+      - The flash occurs when first loading [Astro, Markdown] components, and then finally on the first Framework component to be subsequently loaded; after which the flash no longer occurs.
+      - Astro components alone do not exhibit this issue, they only do so when a Markdown component is present.
+      - This also occurs when repeatedly transferring [Astro?, Markdown?] back and forth between `Portal.Entrance` & `Portal.Destination`
+      - seems related to Portal transference of `<link>` elements
+
+  - [6][MEDIUM][Internal][Components/Tab] animations don't work sometimes, jumps to final state
+    - [Fix] fast duration @ `10ms` was *too* fast, bumped to `30ms`
+
+  - [9][MEDIUM][External][Astro || Markdown] valid HTML is broken by whitespace
+    - [Fix] update to latest `astro` dependencies as of 2022-05-03
+
+  - [12][HIGH][External][Astro.Solid] Console.Warning: `You appear to have multiple instances of Solid. This can lead to unexpected behavior.`
+    - [Fix] update to latest `astro` dependencies as of 2022-05-03
+
+  - [16][MEDIUM][External][Astro.Markdown] namespaced/nested components throw error:  https://github.com/withastro/astro/issues/2474
+    - [Fix] not required, no longer relevant after switching to WebComponent implementation
+
+  - [21][LOW][External][Astro] TypeScript [types, interfaces] can't be used in `.astro` files
+    - [Fix] unknown. maybe from updating package?
+
+  - [22][MEDIUM][???][???] import types do not match up with runtime types in non-typescript files
+    - [Fix] convert `astro.config.mjs` to `astro.config.ts`
+
+  - [25][LOW][External][Astro] `AstroUserConfig` type doesn't match up with docs. `src` & `pages` types raise `ts(2322)`
+    - [Fix]
+      - update to latest `astro` dependencies as of 2022-05-03
+      - implement updated keys/values @ config
+    - [Notes]
+      - `Object literal may only specify known properties, and 'src' does not exist in type 'AstroUserConfig'.ts(2322)`
+
+  - [26][HIGH][Internal][Solid] property/attribute conflict:  https://discord.com/channels/722131463138705510/817960620736380928/966089239462834176
+    - [Fix] implement (property <> attribute) reflection
+
+  - [27][HIGH][External][Astro] `client:only` errors @ React & Vue:  https://github.com/withastro/astro/issues/3154
+    - [Fix] not fixed, issue was closed in favor of [Issue.14]
+
+  - [28][HIGH][External][Astro][*] Web Component `connectedCallback` updates cause issues when rendered with React:  https://github.com/withastro/astro/issues/3155
+    - [Fix]
+      - use `client:visible` and wrap components with a `NoSSR`           component
+      - use `client:only`    and wrap components with a `ShowWhenVisible` component

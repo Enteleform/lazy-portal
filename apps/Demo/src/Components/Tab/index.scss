@@ -1,0 +1,17 @@
+
+.TAB-CONTAINER{
+	display:         flex;
+	flex-direction:  column;
+}
+
+
+.TAB-PANEL{
+	display:         flex;
+	flex-direction:  column;
+	box-sizing:      border-box;
+	flex:            1;
+
+	&.Persisted:not(.Active){
+		display:  none;
+	}
+}

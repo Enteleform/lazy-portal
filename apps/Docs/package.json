@@ -1,0 +1,41 @@
+{"$schema":"https://json.schemastore.org/package.json",
+
+	"name":    "@lazy-portal/docs",
+	"version": "1.0.0",
+	"type":    "module",
+
+	"license": "MIT",
+	"private": true,
+
+	"scripts": {
+		"build":   "astro build   --experimental-integrations",
+		"dev":     "astro dev     --experimental-integrations",
+		"preview": "astro preview --experimental-integrations"
+	},
+
+	"dependencies": {
+		"astro-portal":            "1.0.0",
+
+		"preact":                  "10.7.2",
+		"react-dom":               "18.1.0",
+		"react":                   "18.1.0",
+		"@types/react":            "18.0.9",
+		"solid-js":                "1.4.1",
+
+		"@algolia/client-search":  "4.13.0",
+		"@docsearch/css":          "3.0.0",
+		"@docsearch/react":        "3.0.0",
+
+		"@solid-primitives/keyed": "1.0.0",
+		"@stackblitz/sdk":         "1.6.0"
+	},
+
+	"devDependencies": {
+		"astro":             "1.0.0-beta.28",
+		"@astrojs/preact":   "0.1.2",
+		"@astrojs/react":    "0.1.2",
+		"@astrojs/solid-js": "0.1.2",
+		"sass":              "1.51.0"
+	}
+
+}

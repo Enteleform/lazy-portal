@@ -1,0 +1,29 @@
+---
+
+	//###  Style  ###//
+	import "./Library.scss"
+
+
+  //#############//
+  //##  Props  ##//
+  //#############//
+
+		export interface Props{
+			children: Element
+			id:       string
+			title:    string
+		}
+
+		const {id, title} = (Astro.props as Props)
+
+---
+
+
+
+<div class={`Library ID_${id}`}>
+
+	<div class="Title"> {title} </div>
+
+	<slot/>
+
+</div>

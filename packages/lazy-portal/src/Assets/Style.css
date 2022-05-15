@@ -1,0 +1,15 @@
+
+portal-root,
+portal-entrance,
+portal-entrance > portal-transport{
+	display:  none !important;
+}
+
+portal-destination{
+	display:         flex;
+	flex-direction:  column;
+}
+
+portal-destination > portal-transport{
+	display:  contents;
+}

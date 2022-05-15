@@ -1,0 +1,40 @@
+{
+  "vite": {
+    "optimizeDeps": {
+      "include": [
+        "@astrojs/react",
+        "@astrojs/solid-js",
+        "@mdi/js",
+        "@mui/lab/TabContext",
+        "@mui/lab/TabList",
+        "@mui/lab/TabPanel",
+        "@mui/lab/TreeItem",
+        "@mui/lab/TreeView",
+        "@mui/material/Box",
+        "@mui/material/Button",
+        "@mui/material/Collapse",
+        "@mui/material/SvgIcon",
+        "@mui/material/Tab",
+        "@mui/material/styles",
+        "@react-three/fiber",
+        "@xstate/svelte",
+        "astro/client/load.js",
+        "astro/client/only.js",
+        "astro/client/visible.js",
+        "clsx",
+        "framer-motion",
+        "lit",
+        "lit/decorators.js",
+        "lume",
+        "micromorph",
+        "naive-ui",
+        "pino",
+        "preact/hooks",
+        "prop-types",
+        "react-spring",
+        "solid-use",
+        "xstate"
+      ]
+    }
+  }
+}

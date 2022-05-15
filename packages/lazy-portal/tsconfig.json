@@ -1,0 +1,61 @@
+{"$schema":"https://json.schemastore.org/tsconfig.json",
+
+	"compilerOptions": {
+		"baseUrl": "./",
+		"rootDir": "./src",
+
+		"paths": {
+			"~/*":          ["./src/*"           ],
+			"Assets/*":     ["./src/Assets/*"    ],
+			"Client/*":     ["./src/Client/*"    ],
+			"Components/*": ["./src/Components/*"],
+			"Error/*":      ["./src/Error/*"     ],
+			"Runtime/*":    ["./src/Runtime/*"   ],
+			"State/*":      ["./src/State/*"     ],
+			"Types/*":      ["./src/Types/*"     ],
+			"Utilities/*":  ["./src/Utilities/*" ]
+		},
+
+		"target": "ESNext",
+		"module": "ESNext",
+
+		"lib": [
+			"ESNext"
+		],
+
+		"moduleResolution": "Node",
+		"jsx":              "preserve",
+		"jsxImportSource":  "solid-js",
+
+		"declaration":    true,
+		"declarationMap": true,
+		"sourceMap":      true,
+
+		"skipLibCheck":        true,
+		"skipDefaultLibCheck": true,
+
+		"allowSyntheticDefaultImports": true,
+		"downlevelIteration":           true,
+		"emitDecoratorMetadata":        true,
+		"esModuleInterop":              true,
+		"experimentalDecorators":       true,
+		"resolveJsonModule":            true,
+
+		"strict": false,
+
+		"plugins": [
+			{"transform":"typescript-transform-paths"                          },
+			{"transform":"typescript-transform-paths", "afterDeclarations":true}
+		]
+	},
+
+	"include": [
+		"./src/**/*.ts",
+		"./src/**/*.tsx"
+	],
+
+	"exclude": [
+		"node_modules"
+	]
+
+}

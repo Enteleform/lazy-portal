@@ -1,0 +1,49 @@
+---
+
+//###  App  ###//
+import {get_Examples_StaticPaths, get_Path_From_MockURL} from "../Examples/_Utilities/Paths"
+
+//###  Node  ###//
+import Path from "path"
+
+
+//####################################################################################################################//
+//##>  Exports                                                                                                      ##//
+//####################################################################################################################//
+
+	export function getStaticPaths()
+		{return get_Examples_StaticPaths()}
+
+
+//####################################################################################################################//
+//##>  Setup                                                                                                        ##//
+//####################################################################################################################//
+
+	const examplePath =
+		Astro.canonicalURL.pathname
+		.replace(/^\/Examples-Component\//, "")
+		.replace(/\/$/,                     "")
+
+	const componentPath = Path.resolve(`./src/Examples/${examplePath}/pages/index.astro`)
+
+	const Examples =
+		(await Astro.glob("/src/Examples/**/pages/index.astro"))
+		.map((file) => ({
+			path:      get_Path_From_MockURL(file.$$metadata.mockURL),
+			Component: file.default,
+		}))
+
+	const Example =
+		Examples.filter(({path}) => (
+			(path === componentPath)
+		))[0]
+
+
+
+
+---
+<!--####################################################################################################################-->
+<!--##>  Markup                                                                                                       ##-->
+<!--####################################################################################################################-->
+
+	<Example.Component/>

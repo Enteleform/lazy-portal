@@ -1,0 +1,28 @@
+portal-destination[name="Mixed-ComponentLibraries"]{
+
+
+	.Library{
+		display:         flex;
+		flex-direction:  column;
+		align-items:     center;
+		width:           18rem;
+		height:          26.575rem;
+		margin:          1rem;
+		padding:         1rem;
+		background:      var(--Grey_2);
+		color:           var(--Grey_6);
+		border:          2px solid var(--Grey_3);
+		border-radius:   4px;
+	}
+
+	.Title{
+		font-size:      1.2rem;
+		margin-bottom:  1rem;
+	}
+
+	.Spacer{
+		flex:  1;
+	}
+
+
+}

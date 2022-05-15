@@ -1,0 +1,15 @@
+{
+	"name":    "@lazy-portal/monorepo",
+	"version": "1.0.0",
+	"type":    "module",
+
+	"license": "MIT",
+	"private": true,
+
+	"workspaces": [
+		"apps/*",
+		"packages/*",
+		"packages/_internal/*"
+	]
+
+}

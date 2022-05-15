@@ -1,0 +1,15 @@
+
+main{
+	--Padding:          1rem;
+	--MaxPaddedWidth:   calc(var(--MaxWidth ) - (var(--Padding) * 2));
+	--MaxPaddedHeight:  calc(var(--MaxHeight) - (var(--Padding) * 2));
+
+	display:          flex;
+	flex-direction:   column;
+	align-items:      center;
+	justify-content:  center;
+	width:            var(--MaxPaddedWidth );
+	height:           var(--MaxPaddedHeight);
+	padding:          var(--Padding        );
+	scale:            1;
+}

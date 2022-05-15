@@ -1,0 +1,49 @@
+---
+
+	//###  Layout  ###//
+	import Layout from "Layouts/Default/index.astro"
+
+	//###  Styles  ###//
+	import "Public/Styles/Counter.css"
+	import "./_Styles/Main.scss"
+	import "./_Styles/MediaQueries.scss"
+
+	//###  Components  ###//
+	import {TabGroup} from "./_Components/TabGroup"
+	import {Logos   } from "Components/Logos"
+
+	//###  Components.Counters  ###//
+	//import "../_Components/Counters/Lit"                          /* [ISSUE.1] restore when fixed */
+	import AstroCounter    from "../_Components/Counters/Astro.astro"
+	//import {PreactCounter} from "../_Components/Counters/Preact"  /* [ISSUE.2] restore when fixed */
+	import {ReactCounter } from "../_Components/Counters/React"
+	import {SolidCounter } from "../_Components/Counters/Solid"
+	import SvelteCounter   from "../_Components/Counters/Svelte.svelte"
+	import VueCounter      from "../_Components/Counters/Vue.vue"
+	const  MarkdownCounter = await import("../_Components/Counters/Markdown.md")
+
+---
+
+
+
+<Layout id="Counters_Portals">
+	<main>
+
+		<TabGroup client:visible/>
+
+	</main>
+</Layout>
+
+
+
+<portal-entrance to="Astro"    name="Astro"   > <AstroCounter  client:visible          > <Logos.Astro   /> </AstroCounter           > </portal-entrance>
+<portal-entrance to="Markdown" name="Markdown"> <MarkdownCounter.Content               > <Logos.Markdown/> </MarkdownCounter.Content> </portal-entrance>
+<portal-entrance to="Preact"   name="Preact"  > <div class="Counter"> <div class="Logo"> <Logos.Preact  /> </div> </div>              </portal-entrance>  <!-- [ISSUE.2] remove when fixed -->
+<portal-entrance to="Lit"      name="Lit"     > <div class="Counter"> <div class="Logo"> <Logos.Lit     /> </div> </div>              </portal-entrance>  <!-- [ISSUE.1] remove when fixed -->
+<portal-entrance to="React"    name="React"   > <ReactCounter  client:only="react"     > <Logos.React   /> </ReactCounter           > </portal-entrance>
+<portal-entrance to="Solid"    name="Solid"   > <SolidCounter  client:only="solid-js"  > <Logos.Solid   /> </SolidCounter           > </portal-entrance>
+<portal-entrance to="Svelte"   name="Svelte"  > <SvelteCounter client:only             > <Logos.Svelte  /> </SvelteCounter          > </portal-entrance>
+<portal-entrance to="Vue"      name="Vue"     > <VueCounter    client:only             > <Logos.Vue     /> </VueCounter             > </portal-entrance>
+
+<!--<portal-entrance to="Lit"      name="Lit"     > <lit-counter      client:visible> <Logos.Lit     /> </lit-counter    > </portal-entrance>-->  <!-- [ISSUE.1] restore when fixed -->
+<!--<portal-entrance to="Preact"   name="Preact"  > <PreactCounter    client:visible> <Logos.Preact  /> </PreactCounter  > </portal-entrance>-->  <!-- [ISSUE.2] restore when fixed -->

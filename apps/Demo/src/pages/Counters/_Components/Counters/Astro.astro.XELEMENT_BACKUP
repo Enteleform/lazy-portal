@@ -1,0 +1,78 @@
+---
+
+	//###  Reference  ###//
+	// https://stackblitz.com/edit/node-jubs5w?file=src%2Fcomponents%2FCounter.astro
+	// https://stackblitz.com/edit/node-jubs5w?file=src%2Fcomponents%2FControlAnimation.astro
+
+	//###  App  ###//
+	import {UniqueID} from "Utilities/UniqueID"
+
+	//###  NPM  ###//
+	import XElement from "astro-xelement"
+
+
+	//#############//
+	//##  Setup  ##//
+	//#############//
+
+		const {
+			div:    Counter,
+			div:    Count,
+			button: Button,
+		} = XElement
+
+---
+
+
+
+<Counter
+	class = "Counter Astro"
+	@do = {($) => {
+		$.setAttribute("data-count", 0)
+	}}
+>
+
+	<div class="Logo">
+		<slot/>
+	</div>
+
+	<div class="Controls">
+		<Button
+			class = "Decrement"
+			@click = {()=>{
+				// [TODO] implement logger
+				console.log("[Update] Counter.Astro")
+				const $Counter = this.closest(".Counter")
+				let count = parseInt($Counter.getAttribute("data-count"))
+				count--
+				$Counter.querySelector(".Count").textContent = count
+				$Counter.setAttribute("data-count", count)
+			}}
+		>
+			{"-"}
+		</Button>
+
+		<Count class="Count">
+			{"0"}
+		</Count>
+
+		<Button
+			class = "Increment"
+			@click = {()=>{
+				// [TODO] implement logger
+				console.log("[Update] Counter.Astro")
+				const $Counter = this.closest(".Counter")
+				let count = parseInt($Counter.getAttribute("data-count"))
+				count++
+				$Counter.querySelector(".Count").textContent = count
+				$Counter.setAttribute("data-count", count)
+			}}
+		>
+			{"+"}
+		</Button>
+	</div>
+
+</Counter>
+
+
+<!-- [ISSUE.23] restore this file when fixed -->

@@ -1,0 +1,31 @@
+---
+
+	//###  Style  ###//
+	import "./index.scss"
+
+	//###  Components  ###//
+	import {React_FramerMotion} from "./React_FramerMotion"
+
+	//###  Components.Buttons  ###//
+	import {React_MUI   }     from "./Buttons/React_MUI"
+	import {Solid_HopeUI}     from "./Buttons/Solid_HopeUI"
+	import Vue_NaiveUI        from "./Buttons/Vue_NaiveUI.vue"
+	import Svelte_Materialify from "./Buttons/Svelte_Materialify.svelte"
+
+---
+
+
+
+<div class="Mixed-FramerMotion">
+
+	<React_FramerMotion client:visible portalID="FramerMotion-ReactButton"  offset={0}/>
+	<React_FramerMotion client:visible portalID="FramerMotion-SolidButton"  offset={1}/>
+	<React_FramerMotion client:visible portalID="FramerMotion-SvelteButton" offset={2}/>
+	<React_FramerMotion client:visible portalID="FramerMotion-VueButton"    offset={3}/>
+
+</div>
+
+<portal-entrance to="FramerMotion-ReactButton" > <React_MUI          client:only="react"   /> </portal-entrance>
+<portal-entrance to="FramerMotion-SolidButton" > <Solid_HopeUI       client:only="solid-js"/> </portal-entrance>
+<portal-entrance to="FramerMotion-SvelteButton"> <Svelte_Materialify client:only           /> </portal-entrance>
+<portal-entrance to="FramerMotion-VueButton"   > <Vue_NaiveUI        client:only           /> </portal-entrance>

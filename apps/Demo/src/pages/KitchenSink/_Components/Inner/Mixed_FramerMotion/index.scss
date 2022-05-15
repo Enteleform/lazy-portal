@@ -1,0 +1,115 @@
+portal-destination[name="Mixed-FramerMotion"]{
+
+
+//####################################################################################################################//
+//##>  Root                                                                                                         ##//
+//####################################################################################################################//
+
+	.Mixed-FramerMotion{
+		display:          flex;
+		flex-direction:   row;
+		justify-content:  center;
+		align-items:      center;
+		width:            100%;
+		height:           100%;
+		gap:              11rem;
+		background:       var(--Grey_2);
+		filter:           saturate(1.4);
+	}
+
+
+//####################################################################################################################//
+//##>  Inner Portals                                                                                                ##//
+//####################################################################################################################//
+
+	portal-destination{
+		align-items:      center;
+		justify-content:  center;
+	}
+
+
+//####################################################################################################################//
+//##>  Common                                                                                                       ##//
+//####################################################################################################################//
+
+	portal-destination[name="FramerMotion-ReactButton" ] .BUTTON,
+	portal-destination[name="FramerMotion-SolidButton" ] .BUTTON,
+	portal-destination[name="FramerMotion-SvelteButton"] .s-btn__content,
+	portal-destination[name="FramerMotion-VueButton"   ] .n-button__content{
+		display:         flex;
+		flex-direction:  column;
+	}
+
+	.s-app,             /* Svelte.Materialify */
+	.n-config-provider{ /* Vue   .NaiveUI     */
+		display:  contents;
+	}
+
+	portal-transport[name="FramerMotion-SolidButton"] .BUTTON,
+	portal-transport[name="FramerMotion-VueButton"  ] .BUTTON{
+		transition:  filter 600ms;
+	}
+	portal-transport[name="FramerMotion-SolidButton"] .BUTTON:active,
+	portal-transport[name="FramerMotion-VueButton"  ] .BUTTON:active{
+		filter:      brightness(1.25);
+		transition:  filter 100ms;
+	}
+
+
+//####################################################################################################################//
+//##>  Buttons                                                                                                      ##//
+//####################################################################################################################//
+
+	.FRAMER-MOTION{
+		--ShadowOffset:   10px;
+		--ShadowOpacity:  27%;
+		--ShadowSpread:   30px;
+
+		border:   1px solid hsla(224, 10%, 30%, 80%);
+		opacity:  0.7;
+		filter:   brightness(1.2);
+
+		box-shadow:
+			/**/   0px                             0px                             1px                  hsla(224, 20%, 80%, calc(var(--ShadowOpacity) * 0.7)),
+			inset  1px                             1px                             20px                 hsla(0,   0%,  0%,  20%                             ),
+			/**/   var(--ShadowOffset)             var(--ShadowOffset)             var(--ShadowSpread)  hsla(224, 20%, 55%, var(--ShadowOpacity)            ),
+			/**/   calc(var(--ShadowOffset) * -1)  calc(var(--ShadowOffset) * -1)  var(--ShadowSpread)  hsla(224, 20%, 80%, var(--ShadowOpacity)            )
+		;
+	}
+
+	.BUTTON{
+		width:        100%                       !important;
+		height:       100%                       !important;
+		background:   var(--Grey_4)              !important;
+		color:        hsla(224, 100%, 90%, 100%) !important;
+		line-height:  1rem;
+		opacity:      0.55;
+
+		text-shadow:
+			2px   2px 3px hsla(0, 0%, 0%, 20%),
+			-1px -1px 2px hsla(0, 0%, 0%, 20%),
+			1px   1px 1px hsla(0, 0%, 0%, 40%)
+		;
+	}
+
+	.BUTTON .Framework{
+		margin-bottom:  0.8rem;
+	}
+
+	.BUTTON .Library{
+		font-size:  1.2rem;
+	}
+
+
+//####################################################################################################################//
+//##>  Vue.NaiveUI                                                                                                  ##//
+//####################################################################################################################//
+
+	.n-base-wave,
+	.n-button__border,
+	.n-button__state-border{
+		display:  none !important;
+	}
+
+
+}

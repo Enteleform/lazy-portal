@@ -1,0 +1,39 @@
+---
+
+
+	//###  Style  ###//
+	import "../Root/index.scss"
+
+	//###  Layout  ###//
+	import Layout from "Layouts/Default/index.astro"
+
+	//###  Components  ###//
+	import StyleWrapper from "../_Components/StyleWrapper.astro"
+	import {Logos}      from "Components/Logos"
+
+  //###  App  ###//
+	import {ReactCounter} from "./_Components/Counters/React"
+	import {SolidCounter} from "./_Components/Counters/Solid"
+	import SvelteCounter  from "./_Components/Counters/Svelte.svelte"
+	import VueCounter     from "./_Components/Counters/Vue.vue"
+
+---
+
+
+
+<Layout id="Counters_SharedContext">
+	<main>
+
+		<div class="Row">
+			{/* [TODO] Add other frameworks when issues are resolved. */}
+		</div>
+
+		<div class="Row">
+			<StyleWrapper id="React" > <ReactCounter  client:visible> <Logos.React /> </ReactCounter > </StyleWrapper>
+			<StyleWrapper id="Solid" > <SolidCounter  client:visible> <Logos.Solid /> </SolidCounter > </StyleWrapper>
+			<StyleWrapper id="Svelte"> <SvelteCounter client:visible> <Logos.Svelte/> </SvelteCounter> </StyleWrapper>
+			<StyleWrapper id="Vue"   > <VueCounter    client:visible> <Logos.Vue   /> </VueCounter   > </StyleWrapper>
+		</div>
+
+	</main>
+</Layout>

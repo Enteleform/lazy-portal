@@ -1,0 +1,66 @@
+//###  Module  ###//
+import {expect as Expect} from "./index"
+
+
+//####################################################################################################################//
+//##>  Setup                                                                                                        ##//
+//####################################################################################################################//
+
+	Expect.set_DefaultMode("Error")
+
+
+//####################################################################################################################//
+//##>  Tests                                                                                                        ##//
+//####################################################################################################################//
+
+	test("MatcherGroups with no conflicts do not throw an error.", ()=>{
+		expect(()=>{
+
+			Expect.all.toFail((expect) => [
+				(() => expect(true ).toBe(false)),
+				(() => expect(false).toBe(true )),
+			])
+
+			Expect.some.toFail((expect) => [
+				(() => expect(true ).toBe(true)),
+				(() => expect(false).toBe(true)),
+			])
+
+			Expect.some.toPass((expect) => [
+				(() => expect(true ).toBe(true)),
+				(() => expect(false).toBe(true)),
+			])
+
+			Expect.all.toPass((expect) => [
+				(() => expect(true ).toBe(true )),
+				(() => expect(false).toBe(false)),
+			])
+
+		}).not.toThrow()
+	})
+
+	test("MatcherGroups with conflicts throw an error.", ()=>{
+		expect(()=>{
+
+			Expect.all.toFail((expect) => [
+				(() => expect(true ).toBe(true )),
+				(() => expect(false).toBe(false)),
+			])
+
+			Expect.some.toFail((expect) => [
+				(() => expect(true ).toBe(true )),
+				(() => expect(false).toBe(false)),
+			])
+
+			Expect.some.toPass((expect) => [
+				(() => expect(true ).toBe(false)),
+				(() => expect(false).toBe(true )),
+			])
+
+			Expect.all.toPass((expect) => [
+				(() => expect(true ).toBe(false)),
+				(() => expect(false).toBe(true )),
+			])
+
+		}).toThrow()
+	})

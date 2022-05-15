@@ -1,0 +1,75 @@
+{"$schema":"https://json.schemastore.org/package.json",
+
+	"name":    "astro-portal",
+	"version": "1.0.0",
+	"type":    "module",
+
+	"license": "MIT",
+	"private": false,
+
+	"main":   "./dist/CJS/index.js",
+	"module": "./dist/ESM/index.js",
+	"types":  "./dist/ESM/index.d.ts",
+
+	"exports": {
+		".": {
+			"require": "./dist/CJS/index.js",
+			"import":  "./dist/ESM/index.js"
+		},
+		"./*": {
+			"require": ["./dist/CJS/*.js", "./dist/CJS/*"],
+			"import":  ["./dist/ESM/*.js", "./dist/ESM/*"]
+		}
+	},
+
+	"typesVersions": {
+		"*": {
+			"*":[
+				"./dist/ESM/*.d.ts",
+				"./dist/ESM/*/index.d.ts",
+				"./dist/ESM/index.d.ts"
+			]
+		}
+	},
+
+	"scripts": {
+		"build":   "npm-run-all build:*",
+		"build:1": "del-cli  ./dist/**",
+		"build:2": "make-dir ./dist",
+		"build:3": "ttsc --project ./.tsconfig/CJS.json",
+		"build:4": "ttsc --project ./.tsconfig/ESM.json",
+		"build:5": "cpy ./**/*.d.ts ../dist/CJS/ --parents --cwd=./src/",
+		"build:6": "cpy ./**/*.d.ts ../dist/ESM/ --parents --cwd=./src/",
+		"build:7": "echo {\"type\":\"commonjs\"} > ./dist/CJS/package.json",
+		"build:8": "echo {\"type\":\"module\"}   > ./dist/ESM/package.json",
+
+		"test":    "jest"
+	},
+
+	"dependencies": {
+		"lazy-portal": "1.0.0"
+	},
+
+	"devDependencies": {
+		"@types/node":                "17.0.32",
+
+		"typescript":                 "4.6.4",
+		"ts-node":                    "10.7.0",
+		"tslib":                      "2.4.0",
+		"ttypescript":                "1.5.13",
+		"typescript-transform-paths": "3.3.1",
+
+		"cpy-cli":                    "3.1.1",
+		"del-cli":                    "4.0.1",
+		"make-dir-cli":               "3.0.0",
+		"move-file-cli":              "2.0.0",
+		"npm-run-all":                "4.1.5",
+
+		"jest":                       "28.1.0",
+		"@types/jest":                "27.5.1",
+		"ts-jest":                    "28.0.2",
+
+		"astro":                      "1.0.0-beta.27"
+	}
+
+}

@@ -1,0 +1,65 @@
+{"$schema":"https://json.schemastore.org/tsconfig.json",
+
+	"compileOnSave": false,
+
+	"compilerOptions": {
+		"rootDir": "./",
+		"baseUrl": "./",
+
+		"target": "ES2020",
+		"module": "ESNext",
+
+		"lib": [
+			"ESNext",
+			"DOM.Iterable",
+			"DOM",
+			"ScriptHost"
+		],
+
+		"moduleResolution": "node",
+
+		"declaration":            false,
+		"emitDecoratorMetadata":  true,
+		"esModuleInterop":        true,
+		"experimentalDecorators": true,
+		"importHelpers":          true,
+		"skipDefaultLibCheck":    true,
+		"skipLibCheck":           true,
+		"sourceMap":              true,
+
+		"paths": {
+			"astro-portal":   ["Packages/Plugins/Astro/Portal/src/index.ts"],
+			"astro-portal/*": ["Packages/Plugins/Astro/Portal/src/*"       ],
+
+			"expect-boolean":   ["Packages/Utilities/ExpectBoolean/src/index.ts"],
+			"expect-boolean/*": ["Packages/Utilities/ExpectBoolean/src/*"       ],
+
+			"lazy-portal":   ["Packages/Components/WebComponents/LazyPortal/src/index.ts"],
+			"lazy-portal/*": ["Packages/Components/WebComponents/LazyPortal/src/*"       ],
+
+			"mock":   ["Packages/Utilities/Mock/src/index.ts"],
+			"mock/*": ["Packages/Utilities/Mock/src/*"       ]
+		}
+	},
+
+	"include": [
+		"**/*.d.ts",
+		"Apps/**/*.astro",  "Packages/**/*.astro",
+		"Apps/**/*.cjs",    "Packages/**/*.cjs",
+		"Apps/**/*.js",     "Packages/**/*.js",
+		"Apps/**/*.jsx",    "Packages/**/*.jsx",
+		"Apps/**/*.md",     "Packages/**/*.md",
+		"Apps/**/*.mdx",    "Packages/**/*.mdx",
+		"Apps/**/*.mjs",    "Packages/**/*.mjs",
+		"Apps/**/*.svelte", "Packages/**/*.svelte",
+		"Apps/**/*.ts",     "Packages/**/*.ts",
+		"Apps/**/*.tsx",    "Packages/**/*.tsx",
+		"Apps/**/*.vue",    "Packages/**/*.vue"
+	],
+
+	"exclude": [
+		"node_modules",
+		"tmp"
+	]
+
+}

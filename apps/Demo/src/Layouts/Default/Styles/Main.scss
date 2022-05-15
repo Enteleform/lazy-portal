@@ -1,0 +1,82 @@
+
+//####################################################################################################################//
+//##>  Variables                                                                                                    ##//
+//####################################################################################################################//
+
+	:root{
+		--Hue:         224;
+		--Saturation:  12%;
+		--Lightness:   58%;
+
+		--TitlebarHeight:  env(titlebar-area-height, 0px);
+		--MaxWidth:        100vw;
+		--MaxHeight:       calc(100vh - var(--TitlebarHeight));
+
+		--Grey_1:   hsl(240, 17%, 2% );
+		--Grey_2:   hsl(225, 17%, 14%);
+		--Grey_3:   hsl(221, 15%, 25%);
+		--Grey_4:   hsl(222, 13%, 36%);
+		--Grey_5:   hsl(224, 11%, 47%);
+		--Grey_6:   hsl(224, 12%, 58%);
+		--Grey_7:   hsl(224, 14%, 68%);
+		--Grey_8:   hsl(224, 17%, 78%);
+		--Grey_9:   hsl(220, 20%, 88%);
+		--Grey_10:  hsl(210, 20%, 98%);
+	}
+
+
+//####################################################################################################################//
+//##>  Page                                                                                                         ##//
+//####################################################################################################################//
+
+	:root{--Font_Monospace:"Noto Sans Mono", monospace;            }
+	*    {font-family:     "Exo 2",          sans-serif;           }
+	body {font-family:     "Exo 2",          sans-serif !important;}
+
+
+	html{
+		background:  var(--Grey_1) !important;
+		width:       100vw         !important;
+		height:      100vh         !important;
+	}
+
+
+	body{
+		display:         flex                  !important;
+		flex-direction:  column                !important;
+		width:           var(--MaxWidth )      !important;
+		height:          var(--MaxHeight)      !important;
+		margin:          0                     !important;
+		margin-top:      var(--TitlebarHeight) !important;
+		color:           var(--Grey_5        ) !important;
+	}
+
+	/* [TODO] fix overflows, remove this section, remove  */
+	body:not(.PAGE_KitchenSink_Markdown){
+		overflow:  hidden !important;
+	}
+
+	body.OverflowDisabled:not(.PAGE_KitchenSink_Markdown){
+		overflow:  hidden !important;
+	}
+
+	body.TransitionsDisabled *{
+		transition:  all 0ms !important;
+	}
+
+
+	*{
+		user-select:  none;
+	}
+
+	*:focus-visible{
+		outline:  none;
+	}
+
+
+	h1{font-size:2.8rem !important;  font-weight:normal !important;}
+	h2{font-size:2.4rem !important;  font-weight:normal !important;}
+	h3{font-size:1.8rem !important;  font-weight:normal !important;}
+	h4{font-size:1.4rem !important;  font-weight:normal !important;}
+	h5{font-size:1.2rem !important;  font-weight:bold   !important;}
+	h6{font-size:1rem   !important;  font-weight:bold   !important;}

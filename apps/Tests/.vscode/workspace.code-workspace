@@ -1,0 +1,52 @@
+{
+
+//####################################################################################################################//
+//##>  Folders                                                                                                      ##//
+//####################################################################################################################//
+
+	"folders": [
+		{"name":"___  ROOT  ___________________", "path":"../"   },
+		{"name":"___  SOURCE  ________________",  "path":"../src"},
+	],
+
+
+//####################################################################################################################//
+//##>  Settings                                                                                                     ##//
+//####################################################################################################################//
+
+	"settings": {
+		"window.title": "Apps/LazyPortal/Tests",
+
+		"editor.tabSize":           2,
+		"editor.insertSpaces":      false,
+		"editor.detectIndentation": false,
+		"terminal.integrated.cwd":  "${workspaceFolder:___  ROOT  ___________________}",
+
+		"files.exclude": {
+			"src": true,
+		},
+
+		"search.exclude": {
+			"src": true,
+		},
+	},
+
+
+//####################################################################################################################//
+//##>  Tasks                                                                                                        ##//
+//####################################################################################################################//
+
+	"tasks": {
+		"version": "2.0.0",
+
+		"tasks": [
+			{"label":"Build",           "command":"npm run build",           "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false,                                    }},
+			{"label":"Preview",         "command":"npm run preview",         "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false,                                    }},
+
+			{"label":"Dev",             "command":"npm run dev",             "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false, "group":"Development",             }},
+			{"label":"Test E2E",        "command":"npm run test-e2e",        "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false, "group":"Development", "clear":true}},
+			{"label":"Test E2E: Watch", "command":"npm run test-e2e--watch", "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false, "group":"Development", "clear":true}},
+		],
+	},
+
+}

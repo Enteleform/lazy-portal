@@ -1,0 +1,49 @@
+{
+
+//####################################################################################################################//
+//##>  Folders                                                                                                      ##//
+//####################################################################################################################//
+
+	"folders": [
+		{"name":"___  ROOT  ___________________", "path":"../"   },
+		{"name":"___  SOURCE  ________________",  "path":"../src"},
+	],
+
+
+//####################################################################################################################//
+//##>  Settings                                                                                                     ##//
+//####################################################################################################################//
+
+	"settings": {
+		"window.title": "Apps/LazyPortal/Demo",
+
+		"editor.tabSize":           2,
+		"editor.insertSpaces":      false,
+		"editor.detectIndentation": false,
+		"terminal.integrated.cwd":  "${workspaceFolder:___  ROOT  ___________________}",
+
+		"files.exclude": {
+			"src": true,
+		},
+
+		"search.exclude": {
+			"src": true,
+		},
+	},
+
+
+//####################################################################################################################//
+//##>  Tasks                                                                                                        ##//
+//####################################################################################################################//
+
+	"tasks": {
+		"version": "2.0.0",
+
+		"tasks": [
+			{"label":"Build",   "command":"npm run build",   "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false}},
+			{"label":"Dev",     "command":"npm run dev",     "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false}},
+			{"label":"Preview", "command":"npm run preview", "type":"shell", "promptOnClose":true, "presentation":{"panel":"dedicated", "reveal":"always", "showReuseMessage":false}},
+		],
+	},
+
+}

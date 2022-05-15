@@ -1,0 +1,13 @@
+---
+import Style_URL from "./Style.scss?url"
+import {Counter} from "../components/Counter"
+---
+
+
+<head>
+	<link rel="stylesheet" href={Style_URL}/>
+</head>
+
+<body>
+	<Counter client:visible/>
+</body>

@@ -1,0 +1,51 @@
+---
+
+	//###  Style  ###//
+	import "./index.scss"
+
+	//###  Layout  ###//
+	import Layout from "Layouts/Default/index.astro"
+
+	//###  Components  ###//
+	import Mixed_ComponentLibraries from "Pages/KitchenSink/_Components/Inner/Mixed_ComponentLibraries/index.astro"
+	import Mixed_FramerMotion       from "Pages/KitchenSink/_Components/Inner/Mixed_FramerMotion/index.astro"
+	import {React_ThreeFiber}       from "Pages/KitchenSink/_Components/Inner/React_ThreeFiber"
+	import {Solid_Lume      }       from "Pages/KitchenSink/_Components/Inner/Solid_Lume"
+	import Nested_Frameworks        from "Pages/KitchenSink/_Components/Inner/Nested_Frameworks/index.astro"
+
+
+  //#############//
+  //##  Props  ##//
+  //#############//
+
+		export type Props = {
+			children: Element
+			id:       string
+		}
+
+		const {id} = (Astro.props as Props)
+
+
+  //#############//
+  //##  Setup  ##//
+  //#############//
+
+		const Astro_Markdown = await import("Pages/KitchenSink/_Components/Inner/Astro_Markdown.md")
+
+---
+
+
+
+<Layout id={id}>
+
+	<slot/>
+
+	<portal-entrance to="Mixed-ComponentLibraries"> <Mixed_ComponentLibraries               /> </portal-entrance>
+	<portal-entrance to="Mixed-FramerMotion"      > <Mixed_FramerMotion                     /> </portal-entrance>
+	<portal-entrance to="Astro-Markdown"          > <Astro_Markdown.Content                 /> </portal-entrance>
+	<portal-entrance to="React-ThreeFiber"        > <React_ThreeFiber client:visible        /> </portal-entrance>
+	<portal-entrance to="Solid-Lume"              > <Solid_Lume       client:only="solid-js"/> </portal-entrance>
+	<portal-entrance to="Nested-Frameworks"       > <Nested_Frameworks                      /> </portal-entrance>
+
+</Layout>
+

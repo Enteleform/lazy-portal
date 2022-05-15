@@ -1,0 +1,37 @@
+---
+
+  // ┌────────────────────────────────────────────────────────────────────────────────────┐
+  // │  This component mocks the structure of `Pages/Counters/Portals`, for style reuse.  │
+  // └────────────────────────────────────────────────────────────────────────────────────┘
+
+	//###  App  ###//
+	/* Load Styles */
+	import "Pages/Counters/Portals/index.astro"
+
+
+  //#############//
+  //##  Props  ##//
+  //#############//
+
+		export interface Props{
+			children: Element
+			id:       string
+		}
+
+		const {id} = (Astro.props as Props)
+
+---
+
+
+
+<div class=`TAB-CONTAINER ActiveTab-${id}`>
+	<div class="TAB-PANELS">
+		<div class="Background">
+			<div class=`TAB-PANEL ID_${id} Active Transition-Complete`>
+
+				<slot/>
+
+			</div>
+		</div>
+	</div>
+</div>

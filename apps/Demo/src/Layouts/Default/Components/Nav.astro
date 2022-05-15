@@ -1,0 +1,43 @@
+---
+
+	//###  Style  ###//
+	import "./Nav.scss"
+
+---
+
+
+
+<nav class="Pages">
+
+	<div class="Group">
+		<div class="Title"> Counters </div>
+		<div class="Link"> <a href="/Counters/Root"         > Root          </a> </div>
+		<div class="Link"> <a href="/Counters/Portals"      > Portals       </a> </div>
+		<div class="Link"> <a href="/Counters/SharedContext"> SharedContext </a> </div>
+	</div>
+
+	<div class="Group">
+		<div class="Title"> KitchenSink </div>
+		<div class="Link"> <a href="/KitchenSink/Markdown"> Markdown  </a> </div>
+		<div class="Link"> <a href="/KitchenSink/React"   > React     </a> </div>
+		<div class="Link"> <a href="/KitchenSink/Solid"   > Solid     </a> </div>
+		<div class="Link"> <a href="/KitchenSink/Svelte"  > Svelte    </a> </div>
+		<div class="Link"> <a href="/KitchenSink/Vue"     > Vue       </a> </div>
+	</div>
+
+	<div class="Group">
+		<div class="Title"> Portal </div>
+		<div class="Link"> <a href="/Portal/Modes"> Modes </a> </div>
+	</div>
+
+</nav>
+
+
+
+<script>
+
+	const $Nav    = document.querySelector("body > nav"                   )
+	const $Active = $Nav    .querySelector(`[href="${location.pathname}"]`)
+	$Active?.classList.add("Active")
+
+</script>

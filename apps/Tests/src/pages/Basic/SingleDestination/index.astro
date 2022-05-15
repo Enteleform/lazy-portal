@@ -1,0 +1,18 @@
+---
+
+	//###  Layout  ###//
+	import Layout from "Layouts/Main/Layout.astro"
+
+---
+
+
+
+<Layout>
+
+	<portal-entrance to="Portal" slot="A">
+		{"Portal Content"}
+	</portal-entrance>
+
+	<portal-destination name="Portal" slot="B"/>
+
+</Layout>

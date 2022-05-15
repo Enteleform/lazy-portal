@@ -1,0 +1,30 @@
+---
+
+  //###  Layout  ###//
+	import BaseLayout from "../_Base.astro"
+
+  //###  Style  ###//
+	import "./Style.scss"
+
+---
+
+
+
+<BaseLayout>
+
+	<div class="PortalContainer A">
+		<div class="Title"  > {"A"}            </div>
+		<div class="Content"> <slot name="A"/> </div>
+	</div>
+
+	<div class="PortalContainer B">
+		<div class="Title"  > {"B"}            </div>
+		<div class="Content"> <slot name="B"/> </div>
+	</div>
+
+	<div class="PortalContainer C">
+		<div class="Title"  > {"C"}            </div>
+		<div class="Content"> <slot name="C"/> </div>
+	</div>
+
+</BaseLayout>

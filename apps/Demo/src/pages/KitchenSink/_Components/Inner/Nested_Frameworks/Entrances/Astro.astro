@@ -1,0 +1,29 @@
+---
+
+  //#############//
+  //##  Props  ##//
+  //#############//
+
+		export interface Props{
+			to: string
+		}
+
+		const {to} = (Astro.props as Props)
+
+---
+
+
+
+<portal-entrance to={`Astro-To-${to}`}>
+	<div class="Container Inner">
+
+		<div class="Framework">
+			{"Astro"}
+		</div>
+
+		<div class="Content">
+			<code>Astro</code> in <code>{to}</code>!
+		</div>
+
+	</div>
+</portal-entrance>

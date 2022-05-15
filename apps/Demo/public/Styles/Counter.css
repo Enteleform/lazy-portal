@@ -1,0 +1,71 @@
+
+.Counter{
+	display:             grid;
+	grid-template-rows:  5.5fr 1fr;
+	scale:               1.2;
+}
+
+
+.Counter > .Logo{
+	display:          flex;
+	justify-content:  center;
+	height:           fit-content;
+}
+
+
+.Counter > .Logo .ICON{
+	width:       10rem;
+	height:      10rem;
+	transition:  all 600ms;
+	filter:
+		drop-shadow(0px 0px calc(var(--BackdropScale) * 32px) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.70 * var(--Saturation)),  /*L*/ calc(0.50 * var(--Lightness       )),  /*A*/ calc(80% * 0.15)))  /* Color   */
+		drop-shadow(1px 1px calc(var(--BackdropScale) * 1px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(1.00 * var(--Saturation)),  /*L*/ calc(1.00 * var(--OutlineLightness)),  /*A*/ calc(80% * 0.50)))  /* Outline */
+		drop-shadow(1px 1px calc(1                    * 2px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(1.00 * var(--Saturation)),  /*L*/ calc(1.00 * var(--OutlineLightness)),  /*A*/ calc(80% * 0.80)))  /* Outline */
+		drop-shadow(2px 3px calc(1                    * 1px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.50 * var(--Saturation)),  /*L*/ calc(0.05 * var(--Lightness       )),  /*A*/ calc(80% * 1.00)))  /* Shadow  */
+		drop-shadow(2px 3px calc(1                    * 1px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.50 * var(--Saturation)),  /*L*/ calc(0.05 * var(--Lightness       )),  /*A*/ calc(80% * 1.00)))  /* Shadow  */
+		drop-shadow(2px 3px calc(1                    * 1px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.50 * var(--Saturation)),  /*L*/ calc(0.05 * var(--Lightness       )),  /*A*/ calc(80% * 1.00)))  /* Shadow  */
+		drop-shadow(1px 1px calc(1                    * 2px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.50 * var(--Saturation)),  /*L*/ calc(0.95 * var(--Lightness       )),  /*A*/ calc(80% * 0.35)))  /* Light   */
+		drop-shadow(2px 2px calc(1                    * 4px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.50 * var(--Saturation)),  /*L*/ calc(0.05 * var(--Lightness       )),  /*A*/ calc(80% * 0.30)))  /* Shadow  */
+		drop-shadow(1px 3px calc(1                    * 4px ) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.50 * var(--Saturation)),  /*L*/ calc(0.05 * var(--Lightness       )),  /*A*/ calc(80% * 0.80)))  /* Shadow  */
+		drop-shadow(4px 4px calc(var(--BackdropScale) * 28px) hsla(/*H*/ var(--Hue),  /*S*/ calc(0.70 * var(--Saturation)),  /*L*/ calc(0.50 * var(--Lightness       )),  /*A*/ calc(80% * 0.40)))  /* Color   */
+		drop-shadow(4px 8px calc(var(--BackdropScale) * 16px) black                                                                                                                              )  /* Shadow  */
+	;
+}
+
+
+.Counter > .Controls{
+	display:                grid;
+	grid-template-columns:  repeat(3, 1fr);
+	place-items:            center;
+	font-size:              2rem;
+}
+
+
+.Counter > .Controls > button{
+	width:         3rem;
+	height:        3rem;
+	padding:       0;
+	border-radius: 4px;
+	font-size:     2rem;
+	line-height:   0;
+}
+
+.Counter  > .Controls > button.Decrement{padding-bottom:0.5rem;}
+.Counter  > .Controls > button.Increment{padding-bottom:0.3rem;}
+
+
+.Counter > .Controls > .Count{
+	width:        6rem;
+	margin:       0;
+	text-align:   center;
+	font-size:    4rem;
+	font-family:  var(--Font_Monospace);
+	line-height:  3.1rem;
+	transition:   all 400ms;
+	filter:
+		drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 100%))
+		drop-shadow(2px 2px 6px hsla(0, 0%, 0%, 80% ))
+		drop-shadow(2px 2px 6px hsla(0, 0%, 0%, 80% ))
+	;
+}
+

@@ -1,0 +1,47 @@
+html,
+body{
+	width:   100%;
+	height:  100%;
+}
+
+body{
+	display:          flex;
+	justify-content:  center;
+	flex-direction:   column;
+	align-items:      center;
+	background:       black;
+}
+
+.PortalContainer{
+	display:             grid;
+	grid-template-rows:  1fr 3fr;
+	width:               300px;
+	padding:             0.5rem;
+	color:               #000;
+}
+
+.PortalContainer.A{background:#FAA;}
+.PortalContainer.B{background:#AFA;}
+.PortalContainer.C{background:#AAF;}
+
+.PortalContainer > .Content{
+	display:          flex;
+	justify-content:  center;
+	align-items:      center;
+}
+
+portal-destination,
+portal-transport{
+	width:   100%;
+	height:  100%;
+}
+
+portal-transport{
+	display:     block !important;
+	width:       calc(100% - (1rem * 4));
+	margin:      1rem;
+	padding:     1rem;
+	background:  #333;
+	color:       #AAA;
+	text-align:  center;
+}

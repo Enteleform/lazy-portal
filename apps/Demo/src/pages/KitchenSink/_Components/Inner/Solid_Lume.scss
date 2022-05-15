@@ -1,0 +1,60 @@
+
+//####################################################################################################################//
+//##>  Lume                                                                                                         ##//
+//####################################################################################################################//
+
+	.Lume.Container{
+		display:          flex;
+		justify-content:  center;
+		align-items:      center;
+		width:            1000px;
+		height:           1000px;
+		margin:           auto;
+		scale:            1.5;
+	}
+
+	.Lume.Container > lume-scene,
+	.Lume.Container > lume-scene > lume-node{
+		width:   100% !important;
+		height:  100% !important;
+	}
+
+	.Lume.Container,
+	.Lume.Container *{
+		pointer-events: none;
+	}
+
+
+//####################################################################################################################//
+//##>  Spinner                                                                                                      ##//
+//####################################################################################################################//
+
+	//###  Reference  ###//
+	// https://projects.lukehaas.me/css-loaders/
+
+	.SPINNER {
+		--Hue:  224;
+
+		position:       relative;
+		width:          1rem;
+		height:         1rem;
+		margin:         100px auto;
+		border-radius:  80%;
+		font-size:      25px;
+		text-indent:    -9999em;
+		animation:      Spin 1.1s infinite ease;
+		transform:      translateZ(0);
+		scale:          0.4;
+		opacity:        1;
+	}
+
+	@keyframes Spin{//    1                                                    2                                                    3                                                 4                                                     5                                                 6                                                     7                                                 8
+		0%, 100%{box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 1.0),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.5),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.7);}
+		12.5%   {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.7),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 1.0),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.5);}
+		25%     {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.5),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.7),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 1.0),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2);}
+		37.5%   {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.5),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.7),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 1.0),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2);}
+		50%     {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.5),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.7),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 1.0),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2);}
+		62.5%   {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.5),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.7),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 1.0),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2);}
+		75%     {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.5),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.7),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 1.0),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2);}
+		87.5%   {box-shadow:0em -2.6em 0em 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  2.5em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  1.75em 1.75em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  0em 2.5em 0 0em hsla(var(--Hue), 50%, 80%, 0.2),  -1.8em 1.8em 0 0em hsla(var(--Hue), 50%, 80%, 0.5),  -2.6em 0em 0 0em hsla(var(--Hue), 50%, 80%, 0.7),  -1.8em -1.8em 0 0em hsla(var(--Hue), 50%, 80%, 1  );}
+	}

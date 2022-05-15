@@ -1,0 +1,51 @@
+---
+import Style_URL from "./Style.scss?url"
+---
+
+
+
+<head>
+	<link rel="stylesheet" href={Style_URL}/>
+</head>
+
+
+
+<body>
+	<div class="PortalContainer A">
+		<div class="Title"  > {"A"} </div>
+		<div class="Content">       </div>
+	</div>
+
+	<div class="PortalContainer B">
+		<div class="Title"  > {"B"} </div>
+		<div class="Content">       </div>
+	</div>
+
+	<div class="PortalContainer C">
+		<div class="Title"  > {"C"} </div>
+		<div class="Content">       </div>
+	</div>
+</body>
+
+
+
+<script lang="ts">
+
+	function create_Element_From_HTML(target, text){
+		const $Target = document.querySelector(target)
+		var $ = document.createElement("div")
+		$.innerHTML = text.trim()
+		$Target.append($.firstChild)
+	}
+
+	create_Element_From_HTML(".PortalContainer.A > .Content", `
+		<portal-entrance to="Portal">
+			Portal Content
+		</portal-entrance>
+	`)
+
+	create_Element_From_HTML(".PortalContainer.B > .Content", `
+		<portal-destination name="Portal"/>
+	`)
+
+</script>

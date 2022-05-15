@@ -1,0 +1,50 @@
+---
+
+//###  Layout  ###//
+import Layout from "Layouts/DocsPage/index.astro"
+
+//###  Style  ###//
+import "./Style.scss"
+
+//###  App  ###//
+import {get_Examples_StaticPaths} from "./_Utilities/Paths"
+import {get_ComponentSource     } from "./_Utilities/StackBlitz"
+
+//###  Components  ###//
+import {ComponentSandbox} from "./_Components/ComponentSandbox"
+
+
+//####################################################################################################################//
+//##>  Exports                                                                                                      ##//
+//####################################################################################################################//
+
+	export function getStaticPaths()
+		{return get_Examples_StaticPaths()}
+
+
+//####################################################################################################################//
+//##>  Setup                                                                                                        ##//
+//####################################################################################################################//
+
+	const path     = Astro.canonicalURL.pathname
+	const {source} = await get_ComponentSource({path})
+
+
+
+
+---
+<!--####################################################################################################################-->
+<!--##>  Markup                                                                                                       ##-->
+<!--####################################################################################################################-->
+
+	<Layout>
+
+		<div class="Data">
+			<h1>{path}</h1>
+		</div>
+
+		<div class="Component">
+			<ComponentSandbox client:only="solid-js" source={source}/>
+		</div>
+
+	</Layout>

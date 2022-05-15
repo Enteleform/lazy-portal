@@ -1,0 +1,17 @@
+---
+
+	//###  Layout  ###//
+	import Layout from "Layouts/KitchenSink/index.astro"
+
+	//###  Components  ###//
+	const Markdown = await import("./_Components/Outer/Astro_Markdown.md")
+
+---
+
+
+
+<Layout id="KitchenSink_Markdown">
+
+	<Markdown.Content/>
+
+</Layout>
