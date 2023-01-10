@@ -12,7 +12,7 @@ Check out a *"kitchen sink"* demo here:
 Try it out here:
 
 <a href="https://stackblitz.com/edit/github-wxgykc?file=src%2Fpages%2Findex.astro">
-  <img height="32" src="https://astro.new/open-in-stackblitz.svg"/>
+  <img height="32" src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"/>
 </a>
 
 
